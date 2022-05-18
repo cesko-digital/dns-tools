@@ -41,13 +41,6 @@ module "ceskodigital-net" {
       name    = "_0e25a7161a1a50b70083cd81e26bfbd3.jehlomat.ceskodigital.net"
       type    = "CNAME"
       records = ["_1eea43a4bdd2d6b4d49b7005077fc47d.xdvyhgsvzs.acm-validations.aws."]
-    },
-
-    // Test workflow
-    {
-      name    = "ceskodigital.net"
-      type    = "TXT"
-      records = ["test"]
     }
   ]
 }
