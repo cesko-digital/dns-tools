@@ -1,0 +1,32 @@
+name: "Terraform Apply on push"
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "main"
+    paths:
+      - "infrastructure/aws/**"
+env:
+  tf_version: "1.1.9"
+  tf_working_dir: "infrastructure/aws"
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v1
+      - name: "Install Terraform"
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: ${{ env.tf_version }}
+      - name: "Terraform init"
+        run: |
+          terraform init
+        working-directory: ${{ env.tf_working_dir }}
+      - name: "Terraform apply"
+        run: |
+          terraform apply -auto-approve
+        working-directory: ${{ env.tf_working_dir }}
