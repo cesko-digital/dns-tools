@@ -31,3 +31,8 @@ Ale je lepší smazat staré záznamy a nechat Terraform vytvořit nové (hromad
 - Používáme modul [mineiros-io/terraform_aws_route53](https://github.com/mineiros-io/terraform-aws-route53/tree/master) pro 
 přehlednější zápis.
 - Vytváříme jeden společný delelgation set pro NS záznamy, aby všechny zóny měly stejné NS záznamy a ne náhodné. Viz [resusable-deleagtion-set](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-reusable-delegation-set).
+
+## Kontakt
+
+Kontaktovat nás můžete na Slacku v kanálu [#ceeskodigital-tech](https://cesko-digital.slack.com/archives/CS7RPPVUL).
+Pokud nejste na Slacku Česko.Digital múžete se přidat na [cesko.digital/join](https://cesko.digital/join).
